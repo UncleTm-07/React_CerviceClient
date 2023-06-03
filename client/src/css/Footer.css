@@ -1,0 +1,41 @@
+.footer-container {
+    margin: 150px 0 50px 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 270px));
+    justify-content: center;
+}
+
+.footer-item {
+    color: white;
+    font-family: Bahnschrift, serif;
+}
+
+.footer-item-type {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.footer-item-choose {
+    color: #D1FFE0FF;
+    transition: color 0.8s ease;
+}
+
+.footer-item-choose div:hover {
+    color: #1FCF6EFF;
+    cursor: pointer;
+    transition: color 0.5s ease;
+}
+.footer-item-little {
+    font-size: 10px;
+    color: #D1FFE0FF;
+    margin-bottom: 10px;
+}
+
+.footer-item-info div {
+    margin-bottom: 5px;
+}
+
+.footer-item-info-telephone {
+    margin-top: 10px;
+    font-size: 25px;
+}

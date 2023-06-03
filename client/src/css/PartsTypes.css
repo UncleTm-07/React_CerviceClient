@@ -1,0 +1,26 @@
+.part-type{
+    width: 300px;
+    height: 400px;
+}
+
+.part-type-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Bahnschrift, serif;
+    padding: 20px;
+    border-radius: 30px;
+    border: 2px white groove;
+}
+
+.part-type-container a {
+    margin: 5px 0 10px 0;
+    cursor: pointer;
+    color: white;
+    transition: color 0.5s ease;
+}
+
+.part-type-container a:hover {
+    color: #1fcf6e;
+    transition: color 0.8s ease;
+}

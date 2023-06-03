@@ -1,0 +1,129 @@
+/* Базові стилі */
+.top-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px 0 60px;
+    background-color: #0a0a0a;
+    opacity: 1;
+    transition: opacity 0.5s ease-out;
+}
+
+.top-navbar.hidden {
+    display: none;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.top-navbar div img {
+    height: 50px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px 0 300px;
+    background-color: #0a0a0a;
+    height: 50px;
+    font-family: Bahnschrift, serif;
+}
+
+/* Додайте стилі для верхнього навбара при закріпленні нижнього навбара */
+.navbar.sticky + .top-navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px 0 60px;
+    background-color: #0a0a0a;
+}
+
+.navbar.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    transition: background-color 0.5s ease-out;
+    background-color: #0a0a0a;
+}
+.navbar.sticky ul li a {
+    color: #d1ffe0;
+    transition: color 0.5s ease-out;
+}
+.navbar.sticky ul li a:hover {
+    color: #1fcf6e;
+}
+.navbar.sticky .logout-btn {
+    border-color: #1fcf6e;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+    text-transform: none;
+    transition: 0.25s ease;
+}
+
+.navbar ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+}
+
+.navbar ul li {
+    text-decoration: none;
+    margin: 0 0.75em 0 0.75em;
+    transition: color 0.8s ease;
+}
+
+.navbar ul:hover a {
+    color: #575757;
+    transition: color 0.8s ease;
+}
+
+.navbar ul:hover a:hover {
+    color: #1fcf6e;
+    transition: color 0.8s ease;
+}
+
+
+.navbar .logout-btn {
+    background-color: #181716;
+    color: #ffffff;
+    border-radius: 20px;
+    border-color: #1fcf6e;
+    font-size: medium;
+    padding: 5px 10px;
+    border-style: dashed;
+    cursor: pointer;
+}
+
+.navbar .logout-btn:hover {
+    border-style: dotted;
+}
+
+/* Адаптив для телефонів */
+
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+    }
+
+    .navbar li {
+        margin: 5px 0;
+    }
+
+    .navbar .logout-btn {
+        margin-top: 10px;
+    }
+}

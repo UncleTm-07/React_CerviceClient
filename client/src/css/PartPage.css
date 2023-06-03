@@ -1,0 +1,5 @@
+.part-page {
+    padding: 40px 100px 0 100px;
+    display: grid;
+    grid-template-columns: 400px 1180px;
+}
