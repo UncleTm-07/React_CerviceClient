@@ -6,7 +6,7 @@
 .part-type-container {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     font-family: Bahnschrift, serif;
     padding: 20px;
     border-radius: 30px;
@@ -14,13 +14,15 @@
 }
 
 .part-type-container a {
-    margin: 5px 0 10px 0;
+    margin: 5px 0 10px 15px;
     cursor: pointer;
     color: white;
+    font-size: 20px;
     transition: color 0.5s ease;
 }
 
 .part-type-container a:hover {
+    font-size: 1.5em;
     color: #1fcf6e;
-    transition: color 0.8s ease;
+    transition: color 0.25s ease, font-size 0.25s ease;
 }

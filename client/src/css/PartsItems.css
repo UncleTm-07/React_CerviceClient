@@ -20,9 +20,9 @@
     height: 370px;
     flex-direction: column;
     align-items: flex-start;
-    cursor: pointer;
 }
 .part-item-description {
+    cursor: pointer;
     width: 220px;
     color: white;
     font-family: Bahnschrift, serif;
@@ -38,12 +38,17 @@
 
 .part-item-type {
     width: 220px;
-    color: #1fcf6e;
     font-family: Bahnschrift, serif;
     font-size: 15px;
     transition: color 0.8s ease;
 }
-.part-item-type:hover {
+
+.part-item-type a {
+    color: #1fcf6e;
+    text-decoration: none;
+    cursor: pointer;
+}
+.part-item-type a:hover {
     color: white;
     transition: color 0.8s ease;
 }
@@ -57,4 +62,5 @@
 .part-item img {
     width: 270px;
     height: 220px;
+    cursor: pointer;
 }
