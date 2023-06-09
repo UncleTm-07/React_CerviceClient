@@ -1,6 +1,8 @@
 import React from "react";
-import {PARTS_ROUTE} from "./utils/consts";
+import {ACCESSORIES_ROUTE, PARTS_ROUTE, PC_ROUTE} from "./utils/consts";
 import PartsPage from "./components/Parts/PartsPage";
+import PeripheryPage from "./components/Periphery/PeripheryPage";
+import ComputerPage from "./components/Computers/ComputerPage";
 
 interface Route {
     path: string;
@@ -21,5 +23,13 @@ export const publicRoutes: Route[] = [
     {
         path: PARTS_ROUTE,
         Component: PartsPage
+    },
+    {
+        path: ACCESSORIES_ROUTE,
+        Component: PeripheryPage
+    },
+    {
+        path: PC_ROUTE,
+        Component: ComputerPage
     },
 ];

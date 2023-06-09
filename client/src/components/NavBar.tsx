@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import '../css/NavBar.css';
 import { observer } from "mobx-react-lite";
 import { useNavigate } from "react-router-dom";
-import { PARTS_ROUTE } from "../utils/consts";
+import {ACCESSORIES_ROUTE, PARTS_ROUTE, PC_ROUTE} from "../utils/consts";
 import logo from '../img/logo-removebg-preview.png';
 import shoppingCartIcon from '../img/basket_icon-icons.com_66289.svg';
 
@@ -32,8 +32,8 @@ const NavBar = observer(() => {
             </div>
             <div className={`navbar ${isScrolled ? 'sticky' : ''}`}>
                 <ul>
-                    <li><a href={PARTS_ROUTE}>Системні блоки</a></li>
-                    <li><a href={PARTS_ROUTE}>Периферія</a></li>
+                    <li><a href={PC_ROUTE}>Системні блоки</a></li>
+                    <li><a href={ACCESSORIES_ROUTE}>Периферія</a></li>
                     <li><a href={PARTS_ROUTE}>Комплектуючі</a></li>
                     <li><a href={PARTS_ROUTE}>Конфігуратор</a></li>
                     <li><a href={PARTS_ROUTE}>Уцінка</a></li>

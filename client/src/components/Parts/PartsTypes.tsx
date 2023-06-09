@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../css/PartsTypes.css'
+import '../../css/Parts/PartsTypes.css'
 
 const PartsTypes = () => {
     return (

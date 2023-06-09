@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../css/PartsItems.css'
+import '../../css/Parts/PartsItems.css'
 import corei7 from '../../img/intel-core-i7-10700f-2948ghz-s1200-box.png'
 
 const PartsItems = () => {

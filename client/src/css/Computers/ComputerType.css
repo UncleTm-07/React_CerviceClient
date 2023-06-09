@@ -1,0 +1,116 @@
+.computer-filters {
+    display: grid;
+    grid-template-rows: 240px 1600px;
+    gap: 10px;
+}
+
+.computer-filters-container {
+    border-radius: 30px;
+    width: 320px;
+    display: grid;
+    color: white;
+    font-family: Bahnschrift, serif;
+    font-size: 20px;
+    margin-top: 30px;
+}
+
+.filter-size {
+    max-height: 200px;
+    overflow: auto;
+    scrollbar-width: thin;  /* Ширина полоси прокрутки */
+    scrollbar-color: #999999 #f0f0f0;  /* Колір полоси прокрутки */
+    font-size: 14px;
+    color: #D1FFE0FF;
+    padding: 10px;
+}
+
+.filter-size::-webkit-scrollbar {
+    width: 4px;  /* Ширина полоси прокрутки */
+}
+
+.filter-size::-webkit-scrollbar-track {
+    background-color: #f0f0f0;  /* Колір фону полоси прокрутки */
+}
+
+.filter-size::-webkit-scrollbar-thumb {
+    background-color: #1fcf6e;  /* Колір полоси прокрутки */
+}
+
+.filter-size div {
+    cursor: pointer;
+    transition: color 0.5s ease;
+    margin-bottom: 10px;
+}
+
+.filter-size div:hover {
+    transition: color 0.5s ease;
+    text-shadow: 0 0 5px #b8f6d2;
+}
+
+.computer-filters-value div {
+    padding-top: 5px;
+}
+
+.computer-filter-name-container {
+    display: grid;
+    grid-template-columns: 10px 100px;
+    gap: 5px;
+}
+
+.computer-filter-name {
+    cursor: pointer;
+    width: 80%;
+    transition: color 0.5s ease;
+    margin-bottom: 10px;
+}
+
+.computer-filter-name:hover {
+    text-shadow: 0 0 20px #00fa70;
+    transition: color 0.5s ease;
+
+}
+
+.filter-money-progress {
+    padding: 10px;
+    font-size: 15px;
+    display: grid;
+    grid-template-columns: 30px 110px 30px 110px;
+    gap: 10px;
+    align-items: center;
+}
+
+.filter-money-progress input {
+    border-radius: 10px;
+    border-style: ridge;
+    height: 25px;
+    color: white;
+}
+
+.computer-type {
+    width: 320px;
+    height: 240px;
+}
+
+.computer-type-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-family: Bahnschrift, serif;
+    padding: 20px;
+    border-radius: 30px;
+    border: 2px white groove;
+}
+
+.computer-type-container a {
+    margin: 5px 0 10px 15px;
+    cursor: pointer;
+    color: white;
+    font-size: 20px;
+    transition: color 0.5s ease;
+}
+
+.computer-type-container a:hover {
+    font-size: 1.5em;
+    color: #1fcf6e;
+    transition: color 0.25s ease, font-size 0.25s ease;
+}
