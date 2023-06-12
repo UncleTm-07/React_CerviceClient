@@ -1,0 +1,144 @@
+.designer-constructor-container {
+    margin: 0 auto;
+    width: 1200px;
+    display: grid;
+    grid-template-columns: 300px 350px 550px;
+    color: white;
+}
+
+.designer-constructor-type-container {
+    color: white;
+    font-family: Bahnschrift, serif;
+    display: grid;
+    grid-template-columns: 40px 260px;
+    align-items: center;
+    padding-top: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: color 0.5s ease;
+}
+
+.designer-constructor-type-container:hover {
+    color: #1fcf6e;
+    transition: color 0.5s ease;
+}
+
+.designer-constructor-type-container img {
+    margin: 5px 0 0 0;
+    width: 30px;
+    height: 25px;
+    display: flex;
+}
+
+.designer-constructor-desc-name {
+    font-family: Bahnschrift, serif;
+    margin-bottom: 15px;
+    font-size: 25px;
+}
+
+.designer-constructor-desc {
+    font-family: Bahnschrift, serif;
+    margin-left: 20px;
+}
+.designer-constructor-desc-text {
+    display: grid;
+    grid-template-columns: 300px 200px;
+}
+
+.designer-constructor-desc-text div img {
+    width: 160px;
+}
+
+.designer-constructor-desc-type {
+    font-size: 10px;
+    color: #D1FFE0FF;
+    margin-top: 10px;
+}
+
+.designer-constructor-desc-price {
+ margin-top: 20px;
+}
+
+.designer-constructor-items {
+    margin-left: 20px;
+}
+
+.designer-constructor-items-brand {
+    display: grid;
+    grid-template-columns: 70px 70px;
+}
+
+.designer-constructor-items-brand-default{
+    width: 60px;
+    color: white;
+    background-color: #282828;
+    border-style: none;
+    border-radius: 10px;
+    height: 30px;
+}
+
+.designer-constructor-items-brand-selected {
+    width: 60px;
+    color: white;
+    background-color: #1fcf6e;
+    border-style: none;
+    border-radius: 10px;
+    height: 30px;
+}
+
+.designer-constructor-items-item {
+    padding: 10px;
+    margin-top: 10px;
+    max-height: 390px;
+    overflow: auto;
+    scrollbar-width: thin;  /* Ширина полоси прокрутки */
+    scrollbar-color: #999999 #f0f0f0;  /* Колір полоси прокрутки */
+}
+
+.designer-constructor-items-item::-webkit-scrollbar {
+    width: 4px;  /* Ширина полоси прокрутки */
+}
+
+.designer-constructor-items-item::-webkit-scrollbar-track {
+    background-color: #f0f0f0;  /* Колір фону полоси прокрутки */
+}
+
+.designer-constructor-items-item::-webkit-scrollbar-thumb {
+    background-color: #1fcf6e;  /* Колір полоси прокрутки */
+}
+
+.designer-constructor-items-item-container {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 50px 200px 50px;
+    font-family: Bahnschrift, serif;
+    margin-bottom: 10px;
+}
+
+.designer-constructor-items-item-container img {
+    width: 40px;
+}
+
+.designer-constructor-items-item-default {
+    border-style: none;
+    background-color: #282828;
+    border-radius: 100%;
+    width: 25px;
+    height: 25px;
+    justify-self: center;
+}
+
+.designer-constructor-items-item-selected {
+    border-style: none;
+    background-color: #1fcd6d;
+    border-radius: 100%;
+    width: 25px;
+    height: 25px;
+    justify-self: center;
+}
+
+.designer-constructor-items-item-price {
+    font-size: 10px;
+    color: #D1FFE0FF;
+}
+

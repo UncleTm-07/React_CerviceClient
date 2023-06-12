@@ -22,7 +22,6 @@
 }
 
 .part-type-container a:hover {
-    font-size: 1.5em;
     color: #1fcf6e;
-    transition: color 0.25s ease, font-size 0.25s ease;
+    transition: color 0.25s ease;
 }

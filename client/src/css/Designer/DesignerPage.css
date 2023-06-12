@@ -1,0 +1,19 @@
+.designer-page-constructor {
+    display: grid;
+    grid-template-rows: 100px 500px;
+}
+
+.designer-page-constructor-name {
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.designer-page-constructor-name h2{
+    color: #1fd16f;
+    font-size: 30px;
+    font-family: Bahnschrift, serif;
+}
+

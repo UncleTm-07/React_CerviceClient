@@ -3,7 +3,7 @@ import pc from "../../img/121776469.webp";
 import pc_front from "../../img/121776563.webp";
 import '../../css/Computers/ComputerItems.css'
 import cpu_svg from "../../img/pc_svg/icon-cpu-grey.svg"
-import countOfCors_svg from "../../img/pc_svg/icon-cpu-grey.svg"
+import countOfCors_svg from "../../img/pc_svg/icon-count-core-grey.svg"
 import gpu_svg from "../../img/pc_svg/icon-gpu-grey.svg"
 import ram_svg from "../../img/pc_svg/icon-ram-grey.svg"
 import hdd_svg from "../../img/pc_svg/icon-hdd-grey.svg"

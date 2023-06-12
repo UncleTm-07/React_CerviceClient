@@ -5,13 +5,17 @@
 }
 
 .computer-filters-container {
-    border-radius: 30px;
     width: 320px;
-    display: grid;
+    display: flex;
+    flex-direction: column;
     color: white;
     font-family: Bahnschrift, serif;
     font-size: 20px;
     margin-top: 30px;
+}
+
+.computer-filters-money {
+    margin-bottom: 40px;
 }
 
 .filter-size {
@@ -51,10 +55,20 @@
     padding-top: 5px;
 }
 
+.computer-filters-value {
+    max-height: 40px;
+}
+
 .computer-filter-name-container {
     display: grid;
     grid-template-columns: 10px 100px;
     gap: 5px;
+}
+
+.computer-filter-name-container button {
+    border-style: none;
+    color: white;
+    cursor: pointer;
 }
 
 .computer-filter-name {
@@ -67,7 +81,6 @@
 .computer-filter-name:hover {
     text-shadow: 0 0 20px #00fa70;
     transition: color 0.5s ease;
-
 }
 
 .filter-money-progress {
@@ -110,7 +123,6 @@
 }
 
 .computer-type-container a:hover {
-    font-size: 1.5em;
     color: #1fcf6e;
-    transition: color 0.25s ease, font-size 0.25s ease;
+    transition: color 0.25s ease;
 }

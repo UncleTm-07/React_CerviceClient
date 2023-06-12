@@ -1,18 +1,8 @@
-import React, {useState} from 'react';
+import React, {FC} from 'react';
 import '../../css/Computers/ComputerType.css'
+import FilterComponentPC from "./FilterComponentPC";
 
-const ComputerType = () => {
-    const [isCpuOpen, setIsCpuOpen] = useState(false);
-    const [isGpuOpen, setIsGpuOpen] = useState(false);
-
-    const toggleCpu = () => {
-        setIsCpuOpen(!isCpuOpen);
-    };
-    const toggleGpu = () => {
-        setIsGpuOpen(!isGpuOpen);
-    };
-
-
+const ComputerType: FC = () => {
     return (
         <div className={"computer-filters"}>
             <div className={"computer-type"}>
@@ -24,7 +14,7 @@ const ComputerType = () => {
                     <a>Mini Series</a>
                 </div>
             </div>
-            <div className={"computer-filters-container"}>
+            <div className="computer-filters-container">
                 <div className={"computer-filters-money"}>
                     <div className={"computer-filter-name"}>Ціна</div>
                     <div className={"filter-money-progress"}>
@@ -34,106 +24,56 @@ const ComputerType = () => {
                         <input/>
                     </div>
                 </div>
-                <div className={"computer-filters-value"}>
-                    <div className={"computer-filter-name"}>Виробник CPU</div>
-                    <div className={"filter-size"}>
-                        <div>AMD</div>
-                        <div>Intel</div>
-                    </div>
-                </div>
-                <div className={"computer-filters-value"}>
-                    <div className={"computer-filter-name-container"}>
-                        <button onClick={toggleCpu}>\/</button>
-                        <div className={"computer-filter-name"}>Процесор</div>
-                    </div>
-                    {isCpuOpen && (
-                        <div className={"filter-size"}>
-                            <div>Athlon 300GE</div>
-                            <div>Athlon X4 950</div>
-                            <div>Ryzen 3 1200</div>
-                            <div>Ryzen 5 3600</div>
-                            <div>Ryzen 5 4500</div>
-                            <div>Ryzen 7 3700X</div>
-                            <div>Core i3 10100F</div>
-                            <div>Core i5 10400F</div>
-                            <div>Core i7 12700KF</div>
-                            <div>Core i7 12700KF</div>
-                            <div>Core i7 12700KF</div>
-                            <div>Core i7 12700KF</div>
-                            <div>Core i7 12700KF</div>
-                            <div>Core i7 12700KF</div>
-                            <div>Core i7 12700KF</div>
-                        </div>
-                    )}
-                </div>
-                <br/>
-                <div className={"computer-filters-value"}>
-                    <div className={"computer-filter-name"}>Виробник GPU</div>
-                    <div className={"filter-size"}>
-                        <div>AMD</div>
-                        <div>NVIDIA</div>
-                        <div>Intel</div>
-                    </div>
-                </div>
-                <div className={"computer-filters-value"}>
-                    <div className={"computer-filter-name-container"}>
-                        <button onClick={toggleGpu}>\/</button>
-                        <div className={"computer-filter-name"}>Відеокарта</div>
-                    </div>
-                    {isGpuOpen && (
-                        <div className={"filter-size"}>
-                            <div>Radeon RX Vega</div>
-                            <div>Radeon RX550</div>
-                            <div>Radeon RX560</div>
-                            <div>GeForce GTX 1660 Super</div>
-                            <div>GeForce GTX 1660 Ti</div>
-                            <div>GeForce RTX 3050</div>
-                            <div>GeForce RTX 3060</div>
-                            <div>GeForce RTX 3060 Ti</div>
-                            <div>GeForce RTX 3070 Ti</div>
-                            <div>GeForce RTX 3080</div>
-                            <div>GeForce RTX 4070</div>
-                            <div>GeForce RTX 4070Ti</div>
-                            <div>GeForce RTX 4080</div>
-                            <div>GeForce RTX 4090</div>
-                        </div>
-                    )}
-                </div>
-                <br/>
-                <div className={"computer-filters-value"}>
-                    <div className={"computer-filter-name"}>Тип пам'яті</div>
-                    <div className={"filter-size"}>
-                        <div>DDR4</div>
-                        <div>DDR5</div>
-                    </div>
-                </div>
-                <div className={"computer-filters-value"}>
-                    <div className={"computer-filter-name"}>Оперативна пам’ять</div>
-                    <div className={"filter-size"}>
-                        <div>8GB</div>
-                        <div>16GB</div>
-                        <div>32GB</div>
-                        <div>64GB</div>
-                    </div>
-                </div>
-                <div className={"computer-filters-value"}>
-                    <div className={"computer-filter-name"}>Колір</div>
-                    <div className={"filter-size"}>
-                        <div>Білий</div>
-                        <div>Чорний</div>
-                        <div>Червоний</div>
-                        <div>Сірий</div>
-                        <div>Рожевий</div>
-                    </div>
-                </div>
-                <div className={"computer-filters-value"}>
-                    <div className={"computer-filter-name"}>Накопичувач SSD</div>
-                    <div className={"filter-size"}>
-                        <div>1TB</div>
-                        <div>512GB</div>
-                        <div>256GB</div>
-                    </div>
-                </div>
+                <FilterComponentPC
+                    filterName="Виробник CPU"
+                    options={['AMD', 'Intel']}
+                />
+                <FilterComponentPC
+                    filterName="Процесор"
+                    options={['Athlon 300GE',
+                        'Athlon X4 950',
+                        'Ryzen 3 1200',
+                        'Ryzen 5 3600',
+                        'Ryzen 5 4500',
+                        'Ryzen 7 3700X',
+                        'Core i3 10100F',
+                        'Core i5 10400F',
+                        'Core i7 12700KF',
+                        'Core i7 12700KF']}
+                />
+                <FilterComponentPC
+                    filterName="Виробник GPU"
+                    options={['AMD', 'NVIDIA', 'Intel']}
+                />
+                <FilterComponentPC
+                    filterName="Відеокарта"
+                    options={['Radeon RX Vega',
+                        'Radeon RX550',
+                        'Radeon RX560',
+                        'GeForce GTX 1660 Super',
+                        'GeForce GTX 1660 Ti',
+                        'GeForce RTX 3050',
+                        'GeForce RTX 3060',
+                        'GeForce RTX 3060 Ti',
+                        'GeForce RTX 4070',
+                        'GeForce RTX 4070Ti']}
+                />
+                <FilterComponentPC
+                    filterName="Тип пам'яті"
+                    options={['DDR4', 'DDR5']}
+                />
+                <FilterComponentPC
+                    filterName="Оперативна пам’ять"
+                    options={['8GB', '16GB', '32GB', '64GB']}
+                />
+                <FilterComponentPC
+                    filterName="Колір"
+                    options={['Білий', 'Чорний', 'Червоний', 'Сірий', 'Рожевий']}
+                />
+                <FilterComponentPC
+                    filterName="Накопичувач SSD"
+                    options={['1TB', '512GB', '256GB']}
+                />
             </div>
         </div>
     );
