@@ -1,8 +1,9 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import '../../css/Periphery/PeripheryItems.css'
 import stule from "../../img/cougar-armor-s-gaming-chair-blackorange.png"
 
 const PeripheryItems = () => {
+
     return (
         <div className={"periphery-items"}>
             <div className={"periphery-items-count"}>

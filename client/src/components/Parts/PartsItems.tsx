@@ -1,158 +1,67 @@
 import React from 'react';
 import '../../css/Parts/PartsItems.css'
-import corei7 from '../../img/intel-core-i7-10700f-2948ghz-s1200-box.png'
 
-const PartsItems = () => {
+const PartsItems = ({ items, selectItemName }: { items: any[], selectItemName: string}) => {
     return (
         <div className={"part-items"}>
             <div className={"part-items-count"}>
-                Комплектуючі для комп'ютерів 819 товарів
+                {selectItemName === 'cpu' ?
+                    <div>Процесори <span>{items.length} товарів</span></div>
+                    :
+                    <></>
+                }
+                {selectItemName === 'ram' ?
+                    <div>Оперативна пам'ять <span>{items.length} товарів</span></div>
+                    :
+                    <></>
+                }
+                {selectItemName === 'motherboard' ?
+                    <div>Материнські плати <span>{items.length} товарів</span></div>
+                    :
+                    <></>
+                }
+                {selectItemName === 'videoCard' ?
+                    <div>Відеокарти <span>{items.length} товарів</span></div>
+                    :
+                    <></>
+                }
             </div>
             <div className={"part-items-container"}>
-                <div className={"part-item"}>
-                    <img src={corei7} alt=""/>
-                    <div className={"part-item-description"}>
-                        Процессор Intel Core i5 12400F 2.5GHz 18MB, Alder Lake, 65W, S1700) Box (BX8071512400F)
+                {items.map((item) => (
+                    <div className={"part-item"} key={item.id}>
+                        <div>
+                            <img src={"http://localhost:4020/" + item.img} alt=""/>
+                        </div>
+                        <div className={"part-item-description"}>
+                            {item.name}
+                        </div>
+                        <div className={"part-item-type"}>
+                            {selectItemName === 'cpu' ?
+                                <a href="">Процесори</a>
+                                :
+                                <></>
+                            }
+                            {selectItemName === 'motherboard' ?
+                                <a href="">Материнські плати</a>
+                                :
+                                <></>
+                            }
+                            {selectItemName === 'ram' ?
+                                <a href="">Оперативна пам'ять</a>
+                                :
+                                <></>
+                            }
+                            {selectItemName === 'videoCard' ?
+                                <a href="">Відеокарта</a>
+                                :
+                                <></>
+                            }
+                        </div>
+                        <div className={"part-item-price"}>
+                            {item.price} грн
+                        </div>
                     </div>
-                    <div className={"part-item-type"}>
-                        <a href="">Процесори</a>
-                    </div>
-                    <div className={"part-item-price"}>
-                        7 112 грн
-                    </div>
-                </div>
-                <div className={"part-item"}>
-                    <img src={corei7} alt=""/>
-                    <div className={"part-item-description"}>
-                        Процессор Intel Core i5 12400F 2.5GHz 18MB, Alder Lake, 65W, S1700) Box (BX8071512400F)
-                    </div>
-                    <div className={"part-item-type"}>
-                        <a href="">Процесори</a>
-                    </div>
-                    <div className={"part-item-price"}>
-                        7 112 грн
-                    </div>
-                </div>
-                <div className={"part-item"}>
-                    <img src={corei7} alt=""/>
-                    <div className={"part-item-description"}>
-                        Процессор Intel Core i5 12400F 2.5GHz 18MB, Alder Lake, 65W, S1700) Box (BX8071512400F)
-                    </div>
-                    <div className={"part-item-type"}>
-                        <a href="">Процесори</a>
-                    </div>
-                    <div className={"part-item-price"}>
-                        7 112 грн
-                    </div>
-                </div>
-                <div className={"part-item"}>
-                    <img src={corei7} alt=""/>
-                    <div className={"part-item-description"}>
-                        Процессор Intel Core i5 12400F 2.5GHz 18MB, Alder Lake, 65W, S1700) Box (BX8071512400F)
-                    </div>
-                    <div className={"part-item-type"}>
-                        <a href="">Процесори</a>
-                    </div>
-                    <div className={"part-item-price"}>
-                        7 112 грн
-                    </div>
-                </div>
-                <div className={"part-item"}>
-                    <img src={corei7} alt=""/>
-                    <div className={"part-item-description"}>
-                        Процессор Intel Core i5 12400F 2.5GHz 18MB, Alder Lake, 65W, S1700) Box (BX8071512400F)
-                    </div>
-                    <div className={"part-item-type"}>
-                        <a href="">Процесори</a>
-                    </div>
-                    <div className={"part-item-price"}>
-                        7 112 грн
-                    </div>
-                </div>
-                <div className={"part-item"}>
-                    <img src={corei7} alt=""/>
-                    <div className={"part-item-description"}>
-                        Процессор Intel Core i5 12400F 2.5GHz 18MB, Alder Lake, 65W, S1700) Box (BX8071512400F)
-                    </div>
-                    <div className={"part-item-type"}>
-                        <a href="">Процесори</a>
-                    </div>
-                    <div className={"part-item-price"}>
-                        7 112 грн
-                    </div>
-                </div>
-                <div className={"part-item"}>
-                    <img src={corei7} alt=""/>
-                    <div className={"part-item-description"}>
-                        Процессор Intel Core i5 12400F 2.5GHz 18MB, Alder Lake, 65W, S1700) Box (BX8071512400F)
-                    </div>
-                    <div className={"part-item-type"}>
-                        <a href="">Процесори</a>
-                    </div>
-                    <div className={"part-item-price"}>
-                        7 112 грн
-                    </div>
-                </div>
-                <div className={"part-item"}>
-                    <img src={corei7} alt=""/>
-                    <div className={"part-item-description"}>
-                        Процессор Intel Core i5 12400F 2.5GHz 18MB, Alder Lake, 65W, S1700) Box (BX8071512400F)
-                    </div>
-                    <div className={"part-item-type"}>
-                        <a href="">Процесори</a>
-                    </div>
-                    <div className={"part-item-price"}>
-                        7 112 грн
-                    </div>
-                </div>
-                <div className={"part-item"}>
-                    <img src={corei7} alt=""/>
-                    <div className={"part-item-description"}>
-                        Процессор Intel Core i5 12400F 2.5GHz 18MB, Alder Lake, 65W, S1700) Box (BX8071512400F)
-                    </div>
-                    <div className={"part-item-type"}>
-                        <a href="">Процесори</a>
-                    </div>
-                    <div className={"part-item-price"}>
-                        7 112 грн
-                    </div>
-                </div>
-                <div className={"part-item"}>
-                    <img src={corei7} alt=""/>
-                    <div className={"part-item-description"}>
-                        Процессор Intel Core i5 12400F 2.5GHz 18MB, Alder Lake, 65W, S1700) Box (BX8071512400F)
-                    </div>
-                    <div className={"part-item-type"}>
-                        <a href="">Процесори</a>
-                    </div>
-                    <div className={"part-item-price"}>
-                        7 112 грн
-                    </div>
-                </div>
-                <div className={"part-item"}>
-                    <img src={corei7} alt=""/>
-                    <div className={"part-item-description"}>
-                        Процессор Intel Core i5 12400F 2.5GHz 18MB, Alder Lake, 65W, S1700) Box (BX8071512400F)
-                    </div>
-                    <div className={"part-item-type"}>
-                        <a href="">Процесори</a>
-                    </div>
-                    <div className={"part-item-price"}>
-                        7 112 грн
-                    </div>
-                </div>
-                <div className={"part-item"}>
-                    <img src={corei7} alt=""/>
-                    <div className={"part-item-description"}>
-                        Процессор Intel Core i5 12400F 2.5GHz 18MB, Alder Lake, 65W, S1700) Box (BX8071512400F)
-                    </div>
-                    <div className={"part-item-type"}>
-                        <a href="">Процесори</a>
-                    </div>
-                    <div className={"part-item-price"}>
-                        7 112 грн
-                    </div>
-                </div>
+                ))}
             </div>
         </div>
 

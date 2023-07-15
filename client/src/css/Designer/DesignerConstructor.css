@@ -36,10 +36,20 @@
     font-size: 25px;
 }
 
+.designer-constructor-desc-name:hover {
+    color: #1fcf6e;
+}
+
+.designer-constructor-desc-about {
+    text-shadow: #1fcf6e 1px 1px;
+    font-size: 17px;
+}
+
 .designer-constructor-desc {
     font-family: Bahnschrift, serif;
     margin-left: 20px;
 }
+
 .designer-constructor-desc-text {
     display: grid;
     grid-template-columns: 300px 200px;
@@ -55,8 +65,21 @@
     margin-top: 10px;
 }
 
+.designer-constructor-desc-button button {
+    color: #1fcf6e;
+    padding: 5px;
+    border: #1fcf6e 2px groove;
+    border-radius: 20px;
+    margin: 10px 0 10px 0;
+    cursor: pointer;
+}
+
+.designer-constructor-desc-button button:hover {
+    transform: scale(1.05);
+}
+
 .designer-constructor-desc-price {
- margin-top: 20px;
+    margin-top: 20px;
 }
 
 .designer-constructor-items {
@@ -68,7 +91,7 @@
     grid-template-columns: 70px 70px;
 }
 
-.designer-constructor-items-brand-default{
+.designer-constructor-items-brand-default {
     width: 60px;
     color: white;
     background-color: #282828;
@@ -91,20 +114,20 @@
     margin-top: 10px;
     max-height: 390px;
     overflow: auto;
-    scrollbar-width: thin;  /* Ширина полоси прокрутки */
-    scrollbar-color: #999999 #f0f0f0;  /* Колір полоси прокрутки */
+    scrollbar-width: thin; /* Ширина полоси прокрутки */
+    scrollbar-color: #999999 #f0f0f0; /* Колір полоси прокрутки */
 }
 
 .designer-constructor-items-item::-webkit-scrollbar {
-    width: 4px;  /* Ширина полоси прокрутки */
+    width: 4px; /* Ширина полоси прокрутки */
 }
 
 .designer-constructor-items-item::-webkit-scrollbar-track {
-    background-color: #f0f0f0;  /* Колір фону полоси прокрутки */
+    background-color: #f0f0f0; /* Колір фону полоси прокрутки */
 }
 
 .designer-constructor-items-item::-webkit-scrollbar-thumb {
-    background-color: #1fcf6e;  /* Колір полоси прокрутки */
+    background-color: #1fcf6e; /* Колір полоси прокрутки */
 }
 
 .designer-constructor-items-item-container {
@@ -113,6 +136,16 @@
     grid-template-columns: 50px 200px 50px;
     font-family: Bahnschrift, serif;
     margin-bottom: 10px;
+}
+
+.designer-constructor-items-item-name {
+    cursor: pointer;
+    transition: color 0.5s ease;
+}
+
+.designer-constructor-items-item-name:hover {
+    color: #1fcf6e;
+    transition: color 0.5s ease;
 }
 
 .designer-constructor-items-item-container img {

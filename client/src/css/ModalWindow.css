@@ -1,0 +1,120 @@
+.modal {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.6); /* Прозрачный чёрный цвет */
+}
+
+.modal-content {
+    background-color: rgb(10, 10, 10);
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgb(31, 207, 110); /* Тень */
+    position: relative;
+    width: 400px;
+    max-width: 90%;
+}
+
+.modal-content-v2 {
+    background-color: rgb(10, 10, 10);
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgb(31, 207, 110); /* Тень */
+    position: relative;
+    width: 900px;
+    max-width: 90%;
+}
+
+.modal-content-container {
+    display: grid;
+    grid-template-columns: 450px 450px;
+}
+
+.close {
+    position: absolute;
+    color: #1fcf6e;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    color: white;
+    font-family: Bahnschrift, serif;
+}
+input[type="text"] {
+    color: white;
+    display: block;
+    width: 380px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    font-family: Bahnschrift, serif;
+}
+input[type="number"] {
+    color: white;
+    display: block;
+    width: 380px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    font-family: Bahnschrift, serif;
+}
+input[type="file"] {
+    color: white;
+    display: block;
+    width: 380px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid transparent; /* Змінили колір рамки на transparent */
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    animation: border-animation 2s infinite linear; /* Додали анімацію */
+    font-family: Bahnschrift, serif;
+}
+
+@keyframes border-animation {
+    0% {
+        border-color: transparent; /* Початковий колір рамки - transparent */
+    }
+    50% {
+        border-color: #1fcf6e; /* Колір рамки на половині анімації - зелений (#03f40f) */
+    }
+    100% {
+        border-color: transparent; /* Кінцевий колір рамки - transparent */
+    }
+}
+
+button[type="submit"] {
+    display: block;
+    margin-top: 10px;
+    padding: 10px;
+    border-color: #1fcf6e;
+    color: #1fcf6e;
+    background-color: rgba(24, 20, 20, 0.98);
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: Bahnschrift, serif;
+}
+button[type="submit"]:hover {
+    background: #1fcf6e;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #1fcf6e,
+    0 0 25px #1fcf6e;
+    cursor: pointer;
+}

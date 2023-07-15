@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import '../css/NavBar.css';
 import { observer } from "mobx-react-lite";
 import { useNavigate } from "react-router-dom";
-import {ACCESSORIES_ROUTE, CONFIGURATOR_ROUTE, PARTS_ROUTE, PC_ROUTE} from "../utils/consts";
+import {ACCESSORIES_ROUTE, ADMIN_ROUTE, CONFIGURATOR_ROUTE, PARTS_ROUTE, PC_ROUTE} from "../utils/consts";
 import logo from '../img/logo-removebg-preview.png';
 import shoppingCartIcon from '../img/basket_icon-icons.com_66289.svg';
 
@@ -39,6 +39,7 @@ const NavBar = observer(() => {
                     <li><a href={PARTS_ROUTE}>Уцінка</a></li>
                     <li><a href={PARTS_ROUTE}>Про сайт</a></li>
                     <li><a href={PARTS_ROUTE}>Контакти</a></li>
+                    <li><a href={ADMIN_ROUTE}>Admin-Page</a></li>
                 </ul>
             </div>
         </div>

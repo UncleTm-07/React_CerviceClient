@@ -1,9 +1,10 @@
 import React from "react";
-import {ACCESSORIES_ROUTE, CONFIGURATOR_ROUTE, PARTS_ROUTE, PC_ROUTE} from "./utils/consts";
+import {ACCESSORIES_ROUTE, ADMIN_ROUTE, CONFIGURATOR_ROUTE, PARTS_ROUTE, PC_ROUTE} from "./utils/consts";
 import PartsPage from "./components/Parts/PartsPage";
 import PeripheryPage from "./components/Periphery/PeripheryPage";
 import ComputerPage from "./components/Computers/ComputerPage";
 import DesignerPage from "./components/Designer/DesignerPage";
+import AdminPage from "./components/Admin/AdminPage";
 
 interface Route {
     path: string;
@@ -36,5 +37,9 @@ export const publicRoutes: Route[] = [
     {
         path: CONFIGURATOR_ROUTE,
         Component: DesignerPage
+    },
+    {
+        path: ADMIN_ROUTE,
+        Component: AdminPage
     },
 ];

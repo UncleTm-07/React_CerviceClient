@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useContext, useState} from 'react';
 import '../../css/Designer/DesignerConstructor.css'
 import cpu_svg from "../../img/pc_svg/icon-cpu-grey.svg"
 import motherboard_svg from "../../img/pc_svg/motherboard-svgrepo-com.svg"
@@ -13,15 +13,105 @@ import case_svg from "../../img/pc_svg/icons8-computer-case-62.png"
 import program_svg from "../../img/pc_svg/icons8-windows-10-150.png"
 import intel7 from "../../img/intel-core-i7-10700f-2948ghz-s1200-box.png"
 import cpu_default from "../../img/icon-defualt/icons8-cpu-96.png"
-
+import {Context} from "../../index";
+import {IComputer} from "../../models/IComputer";
+import DesignerDescCpu from "./DesignerDescCpu";
+import DesignerDescMotherboard from "./DesignerDescMotherboard";
 
 const DesignerConstructorItems = () => {
+    const [items, setItems] = useState<any[]>([]);
+    const [computer, setComputer] = useState<IComputer>({} as IComputer);
+    const [item, setItem] = useState<any>({});
+    const [selectItemName, setSelectItemName] = useState<string>("");
+
+    const handleItemsChange = (newItem: any) => {
+        setItems(newItem);
+    };
+    const handleItemsNameChange = (itemName: string) => {
+        setSelectItemName(itemName);
+    };
+
+    const selectItem = (itemId: number) => {
+        if (selectItemName === 'cpu'){
+            computer.cpuId = itemId;
+        }else if (selectItemName === 'motherboard'){
+            computer.motherboardId = itemId;
+        }
+        setComputer(computer)
+        console.log(computer)
+    };
+
+    const {cpuStore} = useContext(Context);
+    const {motherboardStore} = useContext(Context);
+    const {ramStore} = useContext(Context);
+    const {videoCardStore} = useContext(Context);
+    const selectCpu = () => {
+        cpuStore
+            .getCpus()
+            .then((res) => {
+                if (res && res.data) {
+                    handleItemsChange(res.data);
+                    handleItemsNameChange("cpu")
+                } else {
+                    console.error('Invalid response:', res);
+                }
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+    };
+    const selectMotherboard = () => {
+        motherboardStore
+            .getMotherboards()
+            .then((res) => {
+                if (res && res.data) {
+                    handleItemsChange(res.data);
+                    handleItemsNameChange("motherboard")
+                } else {
+                    console.error('Invalid response:', res);
+                }
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+    };
+    const selectRam = () => {
+        ramStore
+            .getRams()
+            .then((res) => {
+                if (res && res.data) {
+                    handleItemsChange(res.data);
+                    handleItemsNameChange("ram")
+                } else {
+                    console.error('Invalid response:', res);
+                }
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+    };
+    const selectVideoCard = () => {
+        videoCardStore
+            .getVideoCards()
+            .then((res) => {
+                if (res && res.data) {
+                    handleItemsChange(res.data);
+                    handleItemsNameChange("videoCard")
+                } else {
+                    console.error('Invalid response:', res);
+                }
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+    };
+
     return (
         <div className={"designer-constructor-container"}>
             <div className={"designer-constructor-type"}>
                 <div className={"designer-constructor-type-container"} style={{color: "#1fcf6e"}}>
                     <div><img src={cpu_svg} alt=""/></div>
-                    <div>
+                    <div onClick={selectCpu}>
                         Процесор
                     </div>
                 </div>
@@ -33,19 +123,19 @@ const DesignerConstructorItems = () => {
                 </div>
                 <div className={"designer-constructor-type-container"}>
                     <div><img src={motherboard_svg} alt=""/></div>
-                    <div>
+                    <div onClick={selectMotherboard}>
                         Материнська плата
                     </div>
                 </div>
                 <div className={"designer-constructor-type-container"}>
                     <div><img src={ram_svg} alt=""/></div>
-                    <div>
+                    <div onClick={selectRam}>
                         Оперативна пам’ять
                     </div>
                 </div>
                 <div className={"designer-constructor-type-container"}>
                     <div><img src={gpu_svg} alt=""/></div>
-                    <div>
+                    <div onClick={selectVideoCard}>
                         Відеокарта
                     </div>
                 </div>
@@ -96,114 +186,32 @@ const DesignerConstructorItems = () => {
                         <img src={cpu_default} alt=""/>
                         <div>
                             <div className={"designer-constructor-items-item-name"}>Процесор не встановлено</div>
-                            <div className={"designer-constructor-items-item-price"}>0  грн</div>
+                            <div className={"designer-constructor-items-item-price"}>0 грн</div>
                         </div>
                         <button className={"designer-constructor-items-item-selected"}>✔</button>
                     </div>
-                    <div className={"designer-constructor-items-item-container"}>
-                        <img src={intel7} alt=""/>
-                        <div>
-                            <div className={"designer-constructor-items-item-name"}>Celeron 5905</div>
-                            <div className={"designer-constructor-items-item-price"}>+ 1 872  грн</div>
+                    {items.map(item => (
+                        <div className={"designer-constructor-items-item-container"} key={item.id}>
+                            <img src={"http://localhost:4020/" + item.img} alt=""/>
+                            <div>
+                                <div onClick={() => setItem(item)}
+                                     className={"designer-constructor-items-item-name"}>{item.name}</div>
+                                <div className={"designer-constructor-items-item-price"}>{item.price} грн</div>
+                            </div>
+                            <button className={"designer-constructor-items-item-default"}>✔</button>
                         </div>
-                        <button className={"designer-constructor-items-item-default"}>✔</button>
-                    </div>
-                    <div className={"designer-constructor-items-item-container"}>
-                        <img src={intel7} alt=""/>
-                        <div>
-                            <div className={"designer-constructor-items-item-name"}>Celeron 5905</div>
-                            <div className={"designer-constructor-items-item-price"}>+ 1 872  грн</div>
-                        </div>
-                        <button className={"designer-constructor-items-item-default"}>✔</button>
-                    </div>
-                    <div className={"designer-constructor-items-item-container"}>
-                        <img src={intel7} alt=""/>
-                        <div>
-                            <div className={"designer-constructor-items-item-name"}>Celeron 5905</div>
-                            <div className={"designer-constructor-items-item-price"}>+ 1 872  грн</div>
-                        </div>
-                        <button className={"designer-constructor-items-item-default"}>✔</button>
-                    </div>
-                    <div className={"designer-constructor-items-item-container"}>
-                        <img src={intel7} alt=""/>
-                        <div>
-                            <div className={"designer-constructor-items-item-name"}>Celeron 5905</div>
-                            <div className={"designer-constructor-items-item-price"}>+ 1 872  грн</div>
-                        </div>
-                        <button className={"designer-constructor-items-item-default"}>✔</button>
-                    </div>
-                    <div className={"designer-constructor-items-item-container"}>
-                        <img src={intel7} alt=""/>
-                        <div>
-                            <div className={"designer-constructor-items-item-name"}>Celeron 5905</div>
-                            <div className={"designer-constructor-items-item-price"}>+ 1 872  грн</div>
-                        </div>
-                        <button className={"designer-constructor-items-item-default"}>✔</button>
-                    </div>
-                    <div className={"designer-constructor-items-item-container"}>
-                        <img src={intel7} alt=""/>
-                        <div>
-                            <div className={"designer-constructor-items-item-name"}>Celeron 5905</div>
-                            <div className={"designer-constructor-items-item-price"}>+ 1 872  грн</div>
-                        </div>
-                        <button className={"designer-constructor-items-item-default"}>✔</button>
-                    </div>
-                    <div className={"designer-constructor-items-item-container"}>
-                        <img src={intel7} alt=""/>
-                        <div>
-                            <div className={"designer-constructor-items-item-name"}>Celeron 5905</div>
-                            <div className={"designer-constructor-items-item-price"}>+ 1 872  грн</div>
-                        </div>
-                        <button className={"designer-constructor-items-item-default"}>✔</button>
-                    </div>
-                    <div className={"designer-constructor-items-item-container"}>
-                        <img src={intel7} alt=""/>
-                        <div>
-                            <div className={"designer-constructor-items-item-name"}>Celeron 5905</div>
-                            <div className={"designer-constructor-items-item-price"}>+ 1 872  грн</div>
-                        </div>
-                        <button className={"designer-constructor-items-item-default"}>✔</button>
-                    </div>
-                    <div className={"designer-constructor-items-item-container"}>
-                        <img src={intel7} alt=""/>
-                        <div>
-                            <div className={"designer-constructor-items-item-name"}>Celeron 5905</div>
-                            <div className={"designer-constructor-items-item-price"}>+ 1 872  грн</div>
-                        </div>
-                        <button className={"designer-constructor-items-item-default"}>✔</button>
-                    </div>
+                    ))}
                 </div>
             </div>
-            <div className={"designer-constructor-desc"}>
-                <div className={"designer-constructor-desc-name"}>Ryzen 9 7800X3D</div>
-                <div>Процесори Ryzen – це гарантія стабільності роботи та ваша
-                    перевага над суперниками в сучасних іграх!
-                </div>
-                <div className={"designer-constructor-desc-text"}>
-                    <div>
-                        <div>
-                            <div className={"designer-constructor-desc-type"}>Обсяг кеш пам'яті 3-го рівня:</div>
-                            <div>96Mb</div>
-                        </div>
-                        <div>
-                            <div className={"designer-constructor-desc-type"}>Тактова частота ядра:</div>
-                            <div>4.2(5.0)GHz</div>
-                        </div>
-                        <div>
-                            <div className={"designer-constructor-desc-type"}>Кількість ядер / потоків:</div>
-                            <div>8/16</div>
-                        </div>
-                        <div>
-                            <div className={"designer-constructor-desc-type"}>Інтегроване графічне ядро:</div>
-                            <div>Radeon Graphics</div>
-                        </div>
-                    </div>
-                    <div>
-                        <img src={intel7} alt=""/>
-                    </div>
-                </div>
-                <div className={"designer-constructor-desc-price"}>+ 22 588 грн</div>
-            </div>
+            {selectItemName === 'cpu' &&  Object.keys(item).length > 0 && item.constructor === Object ?
+                <DesignerDescCpu item={item} selectItem={selectItem}/>
+                :
+                selectItemName === 'motherboard' &&  Object.keys(item).length > 0 && item.constructor === Object ?
+                    <DesignerDescMotherboard item={item} selectItem={selectItem}/>
+                    :
+                    <></>
+
+            }
         </div>
     );
 };
